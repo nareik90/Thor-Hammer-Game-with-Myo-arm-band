@@ -2,42 +2,30 @@
 using System.Collections;
 
 public class Health : MonoBehaviour {
-    TextMesh tm;
+    GUIText tm;
     private Spawn spawn;
+
     // Use this for initialization
     void Start()
     {
-        tm = GetComponent<TextMesh>();
+        tm = GetComponent<GUIText>();
+        Debug.Log("Start Health class");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Face the Camera
-        transform.forward = Camera.main.transform.forward;
-    }
 
-    // Return the current Health by counting the '-'
+    // Return the current Health by counting the '/'
     public int current()
     {
         return tm.text.Length;
     }
 
-    // Decrease the current Health by removing one '-'
+    // Decrease the current Health by removing one '/'
     public void decrease()
     {
+        Debug.Log("Health Decrease");
         if (current() > 1)
             tm.text = tm.text.Remove(tm.text.Length - 1);
         else
             Destroy(transform.parent.gameObject);
-
-        /* if(GameObject.FindWithTag("Castle"))
-         {
-             if (current() > 1)
-             tm.text = tm.text.Remove(tm.text.Length - 1);
-         else
-             Destroy(transform.parent.gameObject);
-            spawn.GameOver();
-         }*/
     }
 }

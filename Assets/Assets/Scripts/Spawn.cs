@@ -5,7 +5,8 @@ public class Spawn : MonoBehaviour {
 
     public GameController GameController;
     public bool spawn = true;
- 
+    bool spawnNext = true;
+    int monsterCounter = 0;
 
     // The Monster that should be spawned
     public GameObject monsterPrefab;
@@ -22,27 +23,31 @@ public class Spawn : MonoBehaviour {
         restart = false;
         RestartText.text = "";
         GameOverText.text = "";*/
-
-        InvokeRepeating("SpawnNext", interval, interval);
-    }
-
-    void SpawnNext()
-    {
-
-        while (spawn == true)
+        if (spawnNext == true)
         {
-            Instantiate(monsterPrefab, transform.position, Quaternion.identity);
-
-            if (spawn == false)
-            {
-                break;
-            }
+            InvokeRepeating("SpawnNext", interval, interval);
         }
     }
-    /*
-    public void GameOver ()
+
+    void update()
     {
-        GameOverText.text = "Game Over!";
-        gameOver = true;
-    }*/
+        if (spawnNext == true)
+        {
+            InvokeRepeating("SpawnNext", interval, interval);
+        }
+    }
+
+     void SpawnNext()
+    {
+        if (monsterCounter <= 3) {
+            Instantiate(monsterPrefab, transform.position, Quaternion.identity);
+            monsterCounter = monsterCounter + 1;
+        }
+
+        if (monsterCounter >= 4)
+        {
+            spawnNext = false;
+            monsterCounter = monsterCounter - 1;
+        }
+    }
 }

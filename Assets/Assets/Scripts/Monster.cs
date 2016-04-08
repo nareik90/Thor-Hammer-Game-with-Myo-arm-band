@@ -7,8 +7,9 @@ public class Monster : MonoBehaviour {
 
     void Start()
     {
-        // Navigate to Castle
+        // Navigate to Target
         GameObject target = GameObject.Find("Target");
+        GameObject healthDec = GameObject.Find("DisplyUI");
 
         if (target)
             GetComponent<NavMeshAgent>().destination = target.transform.position;
@@ -33,6 +34,7 @@ public class Monster : MonoBehaviour {
         {
             co.GetComponentInChildren<Health>().decrease();
             Destroy(gameObject);
+            Debug.Log("Target hit... Bang");
         }
     }
 }
