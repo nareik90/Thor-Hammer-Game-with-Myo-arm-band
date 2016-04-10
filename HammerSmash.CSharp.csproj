@@ -86,6 +86,8 @@
     <Compile Include="Assets\Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Assets\Scripts\ThalmicHub.cs" />
     <Compile Include="Assets\Assets\Scripts\ThalmicMyo.cs" />
+    <Compile Include="Assets\Fx Explosion Pack\Script\DestroyEffect.cs" />
+    <Compile Include="Assets\Fx Explosion Pack\Script\csLightControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\README-MyoUnity.txt" />
