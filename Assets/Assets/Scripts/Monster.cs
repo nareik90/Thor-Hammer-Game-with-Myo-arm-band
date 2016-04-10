@@ -33,8 +33,12 @@ public class Monster : MonoBehaviour {
         if (co.name == "Target")
         {
             co.GetComponentInChildren<Health>().decrease();
-            Destroy(gameObject);
+            KillMonster();
             Debug.Log("Target hit... Bang");
         }
+    }
+
+    void KillMonster() {
+        Destroy(gameObject);
     }
 }

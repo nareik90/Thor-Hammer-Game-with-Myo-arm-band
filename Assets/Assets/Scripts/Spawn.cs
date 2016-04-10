@@ -10,6 +10,8 @@ public class Spawn : MonoBehaviour {
 
     // The Monster that should be spawned
     public GameObject monsterPrefab;
+    // The Bomb that should be spawned
+    public GameObject Bomb;
 
     // Spawn Delay in seconds
     public float interval = 10;
@@ -31,11 +33,22 @@ public class Spawn : MonoBehaviour {
 
     void update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            print("space key was pressed");
+        }
         if (spawnNext == true)
         {
             InvokeRepeating("SpawnNext", interval, interval);
         }
-    }
+
+        if (Input.GetKeyDown("z"))
+        {
+            Debug.Log("Bomb imported");
+            Instantiate(Bomb, transform.position, Quaternion.identity);
+            Debug.Log("Bomb imported");
+        }
+   }
 
      void SpawnNext()
     {
