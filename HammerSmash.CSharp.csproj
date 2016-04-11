@@ -70,11 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Assets\Scripts\ColorBoxByPose.cs" />
+    <Compile Include="Assets\Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Assets\Scripts\JointOrientation.cs" />
     <Compile Include="Assets\Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Assets\Scripts\Myo.NET\EventTypes.cs" />
-    <Compile Include="Assets\Assets\Scripts\Myo.NET\GameController.cs" />
     <Compile Include="Assets\Assets\Scripts\Myo.NET\Hub.cs" />
     <Compile Include="Assets\Assets\Scripts\Myo.NET\Myo.cs" />
     <Compile Include="Assets\Assets\Scripts\Myo.NET\Pose.cs" />

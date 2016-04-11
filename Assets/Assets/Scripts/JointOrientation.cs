@@ -30,6 +30,7 @@ public class JointOrientation : MonoBehaviour
     // which they are active.
     private Pose _lastPose = Pose.Unknown;
 
+
     // Update is called once per frame.
     void Update ()
     {
@@ -157,4 +158,5 @@ public class JointOrientation : MonoBehaviour
 
         myo.NotifyUserAction ();
     }
+
 }

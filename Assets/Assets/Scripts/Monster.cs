@@ -7,7 +7,7 @@ public class Monster : MonoBehaviour {
 
     void Start()
     {
-        // Navigate to Target
+         // Navigate to Target
         GameObject target = GameObject.Find("Target");
         GameObject healthDec = GameObject.Find("DisplyUI");
 
@@ -35,6 +35,13 @@ public class Monster : MonoBehaviour {
             co.GetComponentInChildren<Health>().decrease();
             KillMonster();
             Debug.Log("Target hit... Bang");
+        }
+
+        if (co.name == "Hammer")
+        {
+            KillMonster();
+            gameController.AddScore(ScoreValue);
+            Debug.Log("Scored..........");
         }
     }
 
